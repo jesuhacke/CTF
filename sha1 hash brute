@@ -1,0 +1,22 @@
+import hashlib
+
+def converted_text_sha1(text):
+    digest = hashlib.sha1(
+        text.encode()
+    ).hexdigest()
+    return digest
+
+def main():
+    user_utga = input("Hash utga oruulna uu: ")
+    removed_white = user_utga.strip().lower()
+    with open("C:/Users/Acer/Desktop/python/common.txt", "r") as file:
+        for i in file:
+            password = i.strip()
+            converted = converted_text_sha1(password)
+            if converted == removed_white:
+                print(f"Found: {password}")
+                return
+
+    print("Could not found")
+if __name__ == '__main__':
+    main()
