@@ -1,0 +1,9 @@
+flag = ''
+with open("/home/zetr0/machines/whitepages.txt", "rb") as file:
+	data = file.read().decode('utf-8')
+	for i in data:
+		if i == '\u2003':
+			flag += '0'
+		else:
+			flag += '1'
+print(flag)
